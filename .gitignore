@@ -71,3 +71,5 @@ docs
 
 #Ignore anything in the primary temp folder
 /temp/*
+.Rproj.user
+.Rproj.user
