@@ -1,5 +1,5 @@
-"Fig 3. Soil microbial biomass as a function of precipitation frequency observed over the course of the litter decomposition experiment. Total microbial biomass was estimated according to the methodology described in Anderson & Domsch (1978). Letters indicate significant pair-wise differences (Turkey's HSD; *F* = 34.8, *P* <0.0001). Error bars, � SEM.",,,,,
-Soil microbial biomass (?g C g$^{-1}$ dry soil),Precipitation frequency,SEM upper value,SEM lower value,Soil type,footnote
+"Fig. 3 Soil microbial biomass as a function of precipitation frequency observed over the course of the litter decomposition experiment. Total microbial biomass was estimated according to the methodology described in @Anderson1978. Letters indicate significant pair-wise differences (Turkey's HSD; *F* = 34.8, *P* < 0.0001). Error bars, ± SEM.",,,,,
+Soil microbial biomass (μg C g$^{-1}$ dry soil),Precipitation frequency,SEM upper value,SEM lower value,Soil type,footnote
 139.36,Low,147.03,130.73,Control soil,B
 99.26,Low,108.17,89.87,Reduced-microbial soil,C
 151.98,Intermediate,159.66,144.13,Control soil,B
