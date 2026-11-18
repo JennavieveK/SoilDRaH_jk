@@ -6,8 +6,8 @@ format:
 date: last-modified
 date-format: YYYY-MMMM
 bibliography:
-  - AuthorYYYY_Methods.bib #contains the citations in the methods section
-  - AuthorYYYY.bib #contains citation for the data source, generally a single citation of the primary paper
+  - Smith2010_Methods.bib #contains the citations in the methods section
+  - Smith2010.bib #contains citation for the data source, generally a single citation of the primary paper
 authors: #author scheme from https://quarto.org/docs/journals/authors.html
   #remove ktoddbrown if they did not work on the rescue directly
   - id: ktoddbrown #use the github name as an id
@@ -95,17 +95,19 @@ library(kableExtra) # pretty tables
 library(bibtex) # reading in BibTex files to R
 
 # data files for level 0
-methods.file <- "AuthorYYYY_Methods.md"
-tableN.file <- 'AuthorYYYY_TableN.csv'
-figureM.file <- 'AuthorYYYY_FigureM.csv'
+methods.file <- "Smith2010_Methods.md"
+figure3.file <- 'Smith2010_Figure3.csv'
+figure4.file <- 'Smith2010_Figure4.csv'
+figure5.file <- 'Smith2010_Figure5.csv'
+figure6.file <- 'Smith2010_Figure6.csv'
 
 # Bibliography files
-primaryCitation.file <- 'AuthorYYYY.bib'
-methodsCitation.file <- 'AuthorYYYY_Methods.bib'
+primaryCitation.file <- 'Smith2010.bib'
+methodsCitation.file <- 'Smith2010_Methods.bib'
 
 # read function; you will need to create this function after you have your data
 #... rescue reviewed and before you finish your data harmonization.
-readsource.file <- '../../02_DataHarmonization/readAuthorYYYY.R'
+readsource.file <- '../../02_DataHarmonization/readSmith2010.R'
 if(file.exists(readsource.file)){
   source(readsource.file)
 }
@@ -127,7 +129,7 @@ For the discussion of this data rescue see the Github issue: https://github.com/
 <!--- After you read through the paper write a brief summary of what the study
 measured and what the data was used for in. This should be <250 words.--->
 
-AuthorYYYY primarily measures ... 
+Smith2010 primarily measures ... 
 They use this data to look at ...
 
 ## Tables and figures
@@ -156,17 +158,17 @@ The purpose of this PROJECT is...
 
 <!--- Include a brief explaination to all the files in the folder--->
 
-These files are in the AuthorYYYY data rescue.
+These files are in the Smith2010 data rescue.
 
-- [Readme](README_AUTHORYYYY.qmd)
+- [Readme](README_Smith2010.qmd)
   + This is the primary file that documents the transcriptions and decision made during data rescue.
-- [AuthorYYYY.bib](AuthorYYYY.bib)
+- [Smith2010.bib](Smith2010.bib)
   + citation for article transcribed
-- [AuthorYYYY_Methods.bib](AuthorYYYY_Methods.bib)
+- [Smith2010_Methods.bib](Smith2010_Methods.bib)
   + citations for the methods section of the article
-- [AuthorYYYY_Methods.md](AuthorYYYY_Methods.md)
+- [Smith2010_Methods.md](Smith2010_Methods.md)
   + methods transcribed from primary article
-- [AuthorYYYY_TableN.csv](AuthorYYYY_TableN.csv)
+- [Smith2010_TableN.csv](Smith2010_TableN.csv)
   + table N from primary article with ...
 - [temp/](temp/)
     + scratch folder that will not be archived on GitHub, it should include local copies of the data resource (likely a PDF article) and any spreadsheets or other tools you used for the transcriptions.
@@ -179,8 +181,8 @@ These files are in the AuthorYYYY data rescue.
   - [ ] Claim the article! Let everyone know what you are doing by creating a Data Rescue Issue on the main repository: 
   - [ ] Read the article or data resource and the discription of the target project
   - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_YI' where 'YI' are Your Initials.
-  - [ ] Create a new branch for this data rescue, it is good practice to name it the study ID here, AuthorYYYY where 'Author' is the last name of the first author and YYYY is the four digit year of publication.
-  - [ ] Create a copy of this template folder and rename it to AuthorYYYY
+  - [ ] Create a new branch for this data rescue, it is good practice to name it the study ID here, Smith2010 where 'Author' is the last name of the first author and YYYY is the four digit year of publication.
+  - [ ] Create a copy of this template folder and rename it to Smith2010
   - [ ] Identify data elements (tables and figures) that you plan to transcribe for what curation project and why. Fill out Data summary section (except for the Files), the Data Rescue Plan (here!).
   - [ ] Update the author section of the yml to reflect who is working on the rescue, update the activity log.
   - [ ] Add-Commit-Push the changes to your repository
@@ -245,12 +247,12 @@ Looking for `character(0)` outputs here to show that the two transcripts match e
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
 print('Differing lines in primary file:')
-sprintf('>%s', setdiff(read_lines('AuthorYYYY_FigureM.csv'),
-        read_lines('temp/AuthorYYYY_FigureM_AC.csv')))
+sprintf('>%s', setdiff(read_lines('Smith2010_FigureM.csv'),
+        read_lines('temp/Smith2010_FigureM_AC.csv')))
 
 print('Differing lines in secondary file:')
-sprintf('<%s',setdiff(read_lines('temp/AuthorYYYY_FigureM_AC.csv'),
-        read_lines('AuthorYYYY_FigureM.csv')))
+sprintf('<%s',setdiff(read_lines('temp/Smith2010_FigureM_AC.csv'),
+        read_lines('Smith2010_FigureM.csv')))
 
 
 ```
@@ -291,12 +293,12 @@ Looking for `character(0)` outputs here to show that the two transcripts match e
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
 print('Differing lines in primary file:')
-sprintf('>%s', setdiff(read_lines('AuthorYYYY_TableN.csv'),
-        read_lines('temp/AuthorYYYY_TableN_AC.csv')))
+sprintf('>%s', setdiff(read_lines('Smith2010_TableN.csv'),
+        read_lines('temp/Smith2010_TableN_AC.csv')))
 
 print('Differing lines in secondary file:')
-sprintf('>%s', setdiff(read_lines('temp/AuthorYYYY_TableN_AC.csv'),
-        read_lines('AuthorYYYY_TableN.csv')))
+sprintf('>%s', setdiff(read_lines('temp/Smith2010_TableN_AC.csv'),
+        read_lines('Smith2010_TableN.csv')))
 
 ```
 
@@ -312,12 +314,12 @@ Looking for `character(0)` outputs here to show that the two transcripts match e
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
 print('Differing lines in primary file:')
-sprintf('>%s', setdiff(read_lines('AuthorYYYY_Methods.md'),
-        read_lines('temp/AuthorYYYY_Methods_AC.md')))
+sprintf('>%s', setdiff(read_lines('Smith2010_Methods.md'),
+        read_lines('temp/Smith2010_Methods_AC.md')))
 
 print('Differing lines in secondary file:')
-sprintf('>%s', setdiff(read_lines('temp/AuthorYYYY_Methods_AC.md'),
-        read_lines('AuthorYYYY_Methods.md')))
+sprintf('>%s', setdiff(read_lines('temp/Smith2010_Methods_AC.md'),
+        read_lines('Smith2010_Methods.md')))
 
 ```
 
@@ -411,7 +413,7 @@ Below verifies that the data from the function matches what is coded above.
 #| label: checkReadFunction_lvl0
 
 if(file.exists(readsource.file)){
-  datafunction.lvl0.ls <- readAuthorYYYY(dataDir = '.',
+  datafunction.lvl0.ls <- readSmith2010(dataDir = '.',
                                          dataLevel = 'level0')
   
   if(isTRUE(all.equal(datafunction.lvl0.ls, data.lvl0.ls))){
@@ -531,7 +533,7 @@ Check for an exact match with the read function.
 #| label: checkReadFunction_lvl1
 
 if(file.exists(readsource.file)){
-  datafunction.lvl1.ls <- readAuthorYYYY(dataDir = '.',
+  datafunction.lvl1.ls <- readSmith2010(dataDir = '.',
                                          dataLevel = 'level1')
   
   if(isTRUE(all.equal(datafunction.lvl0.ls, data.lvl0.ls))){

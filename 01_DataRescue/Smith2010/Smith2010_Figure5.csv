@@ -1,0 +1,20 @@
+"Fig. 5 (a) Percent organic matter remaining observed at the ?nal collection period (*t* = 0.53 years) for the control soil treatment. Letters indicate signi?cant pair-wise differences (Tukey?s HSD; *F* = 22.5, *P* < 0.0001). Error bars, ? SEM. (b) Percent organic matter remaining observed at the ?nal collection period (*t* = 0.53 years) for the reduced-microbial soil treatment. Letters indicate signi?cant pair-wise differences (Tukey?s HSD; *F* = 6.14, *P* = 0.0002). Error bars, ? SEM.",,,,,,
+Precipitation frequency,Percent organic matter remaining,SEM high value,SEM low value,graph label,UV-B treatment,footnotes
+Low,92.11,92.57,91.64,(a) Control soil,No UV-B,A
+Low,89.14,89.96,88.25,(a) Control soil,Ambient UV-B,"""A, B"""
+Low,88.21,89.03,87.36,(a) Control soil,Elevated UV-B,B
+Intermediate,87.14,88.18,85.99,(a) Control soil,No UV-B,"""B, C"""
+Intermediate,86.32,86.75,85.89,(a) Control soil,Ambient UV-B,"""B, C"""
+Intermediate,86.61,87.49,85.79,(a) Control soil,Elevated UV-B,"""B, C"""
+High,79.54,80.71,78.29,(a) Control soil,No UV-B,E
+High,82.11,82.71,81.5,(a) Control soil,Ambient UV-B,"""D, E"""
+High,83.82,84.29,83.29,(a) Control soil,Elevated UV-B,"""C, D"""
+Low,92.36,92.82,92,(b) Reduced-microbial soil,,A
+Low,90.18,90.68,89.71,(b) Reduced-microbial soil,,"""A, B"""
+Low,87.14,88.07,86.11,(b) Reduced-microbial soil,,"""B, C"""
+Intermediate,88.32,90.36,86.25,(b) Reduced-microbial soil,,"""B, C"""
+Intermediate,86.61,87.75,85.46,(b) Reduced-microbial soil,,"""B, C"""
+Intermediate,86.75,88.32,85.11,(b) Reduced-microbial soil,,"""B, C"""
+High,83.68,84.54,82.82,(b) Reduced-microbial soil,,"""B, C"""
+High,85.21,86.21,84.21,(b) Reduced-microbial soil,,"""B, C"""
+High,85.75,86.79,84.64,(b) Reduced-microbial soil,,"""B, C"""
