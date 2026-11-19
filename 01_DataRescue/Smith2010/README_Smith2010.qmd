@@ -1,5 +1,5 @@
 ---
-title: "Data Rescue: Author YYYY"
+title: "Data Rescue: Smith 2010"
 format:
   html:
     toc: true
@@ -9,21 +9,17 @@ bibliography:
   - Smith2010_Methods.bib #contains the citations in the methods section
   - Smith2010.bib #contains citation for the data source, generally a single citation of the primary paper
 authors: #author scheme from https://quarto.org/docs/journals/authors.html
-  #remove ktoddbrown if they did not work on the rescue directly
-  - id: ktoddbrown #use the github name as an id
+  - id: JennavieveK
     name:
-      given: Katherine
-      family: Todd-Brown
-    orcid: 0000-0002-3109-8130
+      given: Jennavieve
+      family: Keefer
     affiliation:
-      - ref: uf-ees
-    role: #TODO define these roles and add reference
-      - transcription: lead #secondary, review
-      - standardization: lead #review
-      - curation: lead #review
-      
+      - ref: uf
+    role:
+      - transcription: lead
+
 affiliations:
-  - id: uf-ees
+  - id: uf
     name: University of Florida
     department: Environmental Engineering Sciences
     city: Gainesville
@@ -120,11 +116,9 @@ curation_canidate_semantics.file <- '../../03_DataCuration/CURATION_PROJECT/voca
 
 # Data Summary
 
-<!---- Fill in the full citation here, generally found on the journal page and link in the issue that you started on GitHub. Though this is at the top of the document, this should be one of the last things you do because a lot of this will be a direct copy-paste into the issue template. --->
+> SMITH, W.K., GAO, W., STELTZER, H., WALLENSTEIN, M.D. and TREE, R. (2010), Moisture availability influences the effect of ultraviolet-B radiation on leaf litter decomposition. Global Change Biology, 16: 484-495. https://doi.org/10.1111/j.1365-2486.2009.01973.x 
 
-> Full citation here, exact format does not matter but it should be complete enough to find the paper. Please include the doi
-
-For the discussion of this data rescue see the Github issue: https://github.com/ktoddbrown/SoilDRaH/issues/#.
+For the discussion of this data rescue see the Github issue: https://github.com/ktoddbrown/SoilDRaH/issues/311.
 
 <!--- After you read through the paper write a brief summary of what the study
 measured and what the data was used for in. This should be <250 words.--->
@@ -142,17 +136,17 @@ They use this data to look at ...
 - Figure 
   1)  Describe the data in the first figure
 
-## Fit for purpose: ProjectName
+## Fit for purpose: DeAD
 
-<!--- Write a brief discription of the project you are processing this data source for. This could be a copy-paste from other documentation. ---->
-
-This data is identified as a data source for PROJECT.
+This data is identified as a data source for DeAD.
 The purpose of this PROJECT is...
 
 <!--- Include a list of the key variables identified for the project. This is used to identify the elements for the paper for the data rescue. An example is below for a basic geo-located soil carbon stock project. --->
 
-  - Location: The geo-location is given in the site description section of the methods. Both latitude and longitude are given but not the datum/projection that was used.
-  - Soil carbon stock: Soil carbon stock was calculated from organic carbon fraction and bulk density and is reported in table 3 across two treatments and one control. Coarse fraction was not reported and does not appear to be included.
+  - Location: Leaf litter, soil, and soil biota were collected in a forest of deciduous broadleaf P. tremuloides Michx. (quaking aspen) in the San Juan National forest (CO, USA, 40.58°N, 105.15°W; ∼2700 m elevation).
+  - Duration: Initiated in Spring of 2007, lasting 192 days.
+  - Mass loss: Identified in the Modeling and statistical analysis section of Methods.
+  - Solar exposure: Glasshouse treatments included control (No UV-B radiation, 0 kJ m−2 day−1), ambient (7.4±0.4 kJ m−2 day−1), and elevated (∼15% ozone reduction or 11.2±0.6 kJ m−2 day−1) UV-B exposure (Fig. 1b). Following the initial measurement, UV-B energy was measured daily at 0900 h with a UVX digital radiometer (UVP Inc., San Gabriel, CA, USA) which was calibrated using the Stellarnet spectrometer. 
   
 ## Files
 
@@ -168,7 +162,15 @@ These files are in the Smith2010 data rescue.
   + citations for the methods section of the article
 - [Smith2010_Methods.md](Smith2010_Methods.md)
   + methods transcribed from primary article
-- [Smith2010_TableN.csv](Smith2010_TableN.csv)
+- [Smith2010_Figure2.csv](Smith2010_Figure2.csv)
+  + table N from primary article with ...
+- [Smith2010_Figure3.csv](Smith2010_Figure3.csv)
+  + table N from primary article with ...
+- [Smith2010_Figure4.csv](Smith2010_Figure4.csv)
+  + table N from primary article with ...
+- [Smith2010_Figure5.csv](Smith2010_Figure5.csv)
+  + table N from primary article with ...
+- [Smith2010_Figure6.csv](Smith2010_Figure6.csv)
   + table N from primary article with ...
 - [temp/](temp/)
     + scratch folder that will not be archived on GitHub, it should include local copies of the data resource (likely a PDF article) and any spreadsheets or other tools you used for the transcriptions.
@@ -178,11 +180,11 @@ These files are in the Smith2010 data rescue.
 ## Data Rescue Plan
 
 + Lead
-  - [ ] Claim the article! Let everyone know what you are doing by creating a Data Rescue Issue on the main repository: 
-  - [ ] Read the article or data resource and the discription of the target project
-  - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_YI' where 'YI' are Your Initials.
-  - [ ] Create a new branch for this data rescue, it is good practice to name it the study ID here, Smith2010 where 'Author' is the last name of the first author and YYYY is the four digit year of publication.
-  - [ ] Create a copy of this template folder and rename it to Smith2010
+  - [x] Claim the article! Let everyone know what you are doing by creating a Data Rescue Issue on the main repository: 
+  - [x] Read the article or data resource and the discription of the target project
+  - [x] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_YI' where 'YI' are Your Initials.
+  - [x] Create a new branch for this data rescue, it is good practice to name it the study ID here, Smith2010 where 'Author' is the last name of the first author and YYYY is the four digit year of publication.
+  - [x] Create a copy of this template folder and rename it to Smith2010
   - [ ] Identify data elements (tables and figures) that you plan to transcribe for what curation project and why. Fill out Data summary section (except for the Files), the Data Rescue Plan (here!).
   - [ ] Update the author section of the yml to reflect who is working on the rescue, update the activity log.
   - [ ] Add-Commit-Push the changes to your repository
@@ -203,11 +205,9 @@ These files are in the Smith2010 data rescue.
   - [ ] address any revisions in your pull request review
   - [ ] celebrate!
 
-## Figure M
+## Figure 2
 
-<!--- Create a plot to make the figure easy to compare to the table. You don't have to be exactly the same but it should be obvious, at a glance, if the transcript matches.---->
-
-Figure M was modified ....
+Figure 2 was modified ....
 
 ```{r}
 #| label: figure3Check
@@ -257,6 +257,108 @@ sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure3_SRS.csv'),
 
 ```
 
+## Figure 3
+
+Figure 3 was modified ....
+
+```{r}
+#| label: figure3Check
+
+
+plot.df <- read_csv(file = figure3.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  mutate(across(c(`Depth [cm]`, `Soil organic carbon density [g cm$-1$]`),
+                as.numeric)) #make things numbers
+         
+ggplot(data = plot.df, 
+       mapping = aes(x = `Depth [cm]`, y = `Soil organic carbon density [g cm$-1$]`, color=Site)) +
+  geom_line() +
+  geom_point() +
+  #depth below surface is often plotted flipped and downward positive
+  scale_x_reverse() +
+  coord_flip() +
+  labs(caption = read_csv(file = table3.file, #read in that file again but...
+                           n_max = 1, #only read the first line
+                           col_names = 'caption', #call it the caption
+                           #read everything as a character
+                           col_types = cols(.default = col_character()),
+                           show_col_types = FALSE #do not return messages
+                           )$caption #and take it out of the table
+  )
+```
+
+Cross check for the figure above. 
+Looking for `character(0)` outputs here to show that the two transcripts match exactly.
+
+```{r}
+#| label: compareFigure3
+
+# You will want to repeat the line below to cross check each csv and md file in the
+#... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
+
+print('Differing lines in primary file:')
+sprintf('>%s', setdiff(read_lines('Smith2010_Figure3.csv'),
+        read_lines('temp/Smith2010_Figure3_SRS.csv')))
+
+print('Differing lines in secondary file:')
+sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure3_SRS.csv'),
+        read_lines('Smith2010_Figure3.csv')))
+
+
+```
+## Figure 4
+
+Figure 4 was modified ....
+
+```{r}
+#| label: figure4Check
+
+
+plot.df <- read_csv(file = figure4.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  mutate(across(c(`Depth [cm]`, `Soil organic carbon density [g cm$-1$]`),
+                as.numeric)) #make things numbers
+         
+ggplot(data = plot.df, 
+       mapping = aes(x = `Depth [cm]`, y = `Soil organic carbon density [g cm$-1$]`, color=Site)) +
+  geom_line() +
+  geom_point() +
+  #depth below surface is often plotted flipped and downward positive
+  scale_x_reverse() +
+  coord_flip() +
+  labs(caption = read_csv(file = table3.file, #read in that file again but...
+                           n_max = 1, #only read the first line
+                           col_names = 'caption', #call it the caption
+                           #read everything as a character
+                           col_types = cols(.default = col_character()),
+                           show_col_types = FALSE #do not return messages
+                           )$caption #and take it out of the table
+  )
+```
+
+Cross check for the figure above. 
+Looking for `character(0)` outputs here to show that the two transcripts match exactly.
+
+```{r}
+#| label: compareFigure4
+
+# You will want to repeat the line below to cross check each csv and md file in the
+#... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
+
+print('Differing lines in primary file:')
+sprintf('>%s', setdiff(read_lines('Smith2010_Figure4.csv'),
+        read_lines('temp/Smith2010_Figure4_SRS.csv')))
+
+print('Differing lines in secondary file:')
+sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure4_SRS.csv'),
+        read_lines('Smith2010_Figure4.csv')))
+
+
+```
 
 ## Table N
 
