@@ -330,7 +330,7 @@ ggplot(data = plot.df,
   #depth below surface is often plotted flipped and downward positive
   scale_x_reverse() +
   coord_flip() +
-  labs(caption = read_csv(file = table3.file, #read in that file again but...
+  labs(caption = read_csv(file = table4.file, #read in that file again but...
                            n_max = 1, #only read the first line
                            col_names = 'caption', #call it the caption
                            #read everything as a character
@@ -360,21 +360,29 @@ sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure4_SRS.csv'),
 
 ```
 
-## Table N
+## Figure 5
 
-<!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
-
-Table N was modified by dropping the sub-table as a leading column into the transcribed table.
+Figure 5 was modified ....
 
 ```{r}
-#| label: table1Check
+#| label: figure5Check
 
 
-read_csv(file = tableN.file, #read in the specific file
+plot.df <- read_csv(file = figure5.file, #read in the specific file
          skip = 1, #skip the first line with the caption
          #read everything as a character, don't worry about formatting yet
          col_types = cols(.default = col_character())) |>
-  kable(caption = read_csv(file = tableN.file, #read in that file again but...
+  mutate(across(c(`Depth [cm]`, `Soil organic carbon density [g cm$-1$]`),
+                as.numeric)) #make things numbers
+         
+ggplot(data = plot.df, 
+       mapping = aes(x = `Depth [cm]`, y = `Soil organic carbon density [g cm$-1$]`, color=Site)) +
+  geom_line() +
+  geom_point() +
+  #depth below surface is often plotted flipped and downward positive
+  scale_x_reverse() +
+  coord_flip() +
+  labs(caption = read_csv(file = table5.file, #read in that file again but...
                            n_max = 1, #only read the first line
                            col_names = 'caption', #call it the caption
                            #read everything as a character
@@ -384,23 +392,23 @@ read_csv(file = tableN.file, #read in the specific file
   )
 ```
 
-Cross check for table above. 
+Cross check for the figure above. 
 Looking for `character(0)` outputs here to show that the two transcripts match exactly.
 
 ```{r}
-#| label: compareTableN
-
+#| label: compareFigure5
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
 print('Differing lines in primary file:')
-sprintf('>%s', setdiff(read_lines('Smith2010_TableN.csv'),
-        read_lines('temp/Smith2010_TableN_AC.csv')))
+sprintf('>%s', setdiff(read_lines('Smith2010_Figure5.csv'),
+        read_lines('temp/Smith2010_Figure5_SRS.csv')))
 
 print('Differing lines in secondary file:')
-sprintf('>%s', setdiff(read_lines('temp/Smith2010_TableN_AC.csv'),
-        read_lines('Smith2010_TableN.csv')))
+sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure5_SRS.csv'),
+        read_lines('Smith2010_Figure5.csv')))
+
 
 ```
 
