@@ -1,20 +1,20 @@
-"Fig. 6 (a) Litter percent nitrogen remaining observed at the ?nal sample collection period (*t* = 0.53 years) for the control soil treatment. Letters indicate signi?cant pair-wise differences (Tukey’s HSD; *F* = 6.56, *P* < 0.0001). Error bars, ± SEM. (b) Litter percent nitrogen remaining observed at the ?nal sample collection period (*t* = 0.53 yr.) for the reduced-microbial soil treatment. Letters indicate signi?cantpair-wise differences (Tukey’s HSD; *F* = 4.19, *P* = 0.002). Error bars,  SEM.",,,,,,
-Precipitation frequency,Percent nitrogen remaining,SEM high value,SEM low value,graph label,UV-B treatment,footnotes
-Low,114.97,119.88,110.43,(a) Control soil,,"""B, C"""
-Low,106.13,110.55,101.59,(a) Control soil,,C
-Low,105.03,110.92,99.02,(a) Control soil,,C
-Intermediate,123.07,127.48,118.77,(a) Control soil,,"""A, B, C"""
-Intermediate,123.92,128.59,119.26,(a) Control soil,,"""A, B, C"""
-Intermediate,111.16,113.99,107.97,(a) Control soil,,"""B, C"""
-High,140,143.43,136.69,(a) Control soil,,A
-High,131.04,135.46,126.62,(a) Control soil,,"""A, B"""
-High,125.15,129.94,120.24,(a) Control soil,,"""A, B, C"""
-Low,107.24,112.76,101.47,(b) Reduced-microbial soil,,"""B, C"""
-Low,115.09,121.47,108.83,(b) Reduced-microbial soil,,"""A, B, C"""
-Low,106.13,109.32,103.07,(b) Reduced-microbial soil,,C
-Intermediate,109.08,113.99,104.17,(b) Reduced-microbial soil,,"""B, C"""
-Intermediate,117.18,121.84,112.39,(b) Reduced-microbial soil,,"""A, B, C"""
-Intermediate,117.29,121.23,113.13,(b) Reduced-microbial soil,,"""A, B, C"""
-High,134.23,139.14,129.08,(b) Reduced-microbial soil,,A
-High,129.2,133.25,125.15,(b) Reduced-microbial soil,,"""A, B"""
-High,123.19,127.73,118.53,(b) Reduced-microbial soil,,"""A, B, C"""
+"Fig. 6 (a) Litter percent nitrogen remaining observed at the final sample collection period (*t* = 0.53 years) for the control soil treatment. Letters indicate significant pair-wise differences (Tukey's HSD; *F* = 6.56, *P* < 0.0001). Error bars, Â± SEM. (b) Litter percent nitrogen remaining observed at the final sample collection period (*t* = 0.53 yr.) for the reduced-microbial soil treatment. Letters indicate significant pair-wise differences (Tukey's HSD; *F* = 4.19, *P* = 0.002). Error bars, Â± SEM.",,,,,,
+Precipitation frequency,Percent nitrogen remaining,SEM high value,SEM low value,graph label,UV-B Treatment,footnotes
+Low,115.01,119.84,110.43,(a) Control soil,No UV-B,"B, C"
+Low,106.11,110.53,101.59,(a) Control soil,Ambient UV-B,C
+Low,105.05,110.93,99.02,(a) Control soil,Elevated UV-B,C
+Intermediate,123.05,127.42,118.77,(a) Control soil,No UV-B,"A, B, C"
+Intermediate,123.92,128.69,119.26,(a) Control soil,Ambient UV-B,"A, B, C"
+Intermediate,111.11,114.02,107.97,(a) Control soil,Elevated UV-B,"B, C"
+High,140.0,143.38,136.69,(a) Control soil,No UV-B,A
+High,131.03,135.40,126.62,(a) Control soil,Ambient UV-B,"A, B"
+High,125.15,129.87,120.24,(a) Control soil,Elevated UV-B,"A, B, C"
+Low,107.14,112.73,101.47,(b) Reduced-microbial soil,No UV-B,"B, C"
+Low,115.07,121.45,108.83,(b) Reduced-microbial soil,Ambient UV-B,"A, B, C"
+Low,106.13,109.45,103.07,(b) Reduced-microbial soil,Elevated UV-B,C
+Intermediate,109.10,114.0,104.17,(b) Reduced-microbial soil,No UV-B,"B, C"
+Intermediate,117.15,121.86,112.39,(b) Reduced-microbial soil,Ambient UV-B,"A, B, C"
+Intermediate,117.21,121.19,113.13,(b) Reduced-microbial soil,Elevated UV-B,"A, B, C"
+High,134.12,139.04,129.08,(b) Reduced-microbial soil,No UV-B,A
+High,129.02,133.21,125.15,(b) Reduced-microbial soil,Ambient UV-B,"A, B"
+High,123.13,127.70,118.53,(b) Reduced-microbial soil,Elevated UV-B,"A, B, C"
