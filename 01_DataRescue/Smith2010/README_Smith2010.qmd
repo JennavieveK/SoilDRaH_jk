@@ -210,10 +210,10 @@ These files are in the Smith2010 data rescue.
 Figure 2 was modified ....
 
 ```{r}
-#| label: figure3Check
+#| label: figure2Check
 
 
-plot.df <- read_csv(file = figure3.file, #read in the specific file
+plot.df <- read_csv(file = figure2.file, #read in the specific file
          skip = 1, #skip the first line with the caption
          #read everything as a character, don't worry about formatting yet
          col_types = cols(.default = col_character())) |>
@@ -227,7 +227,7 @@ ggplot(data = plot.df,
   #depth below surface is often plotted flipped and downward positive
   scale_x_reverse() +
   coord_flip() +
-  labs(caption = read_csv(file = table3.file, #read in that file again but...
+  labs(caption = read_csv(file = table2.file, #read in that file again but...
                            n_max = 1, #only read the first line
                            col_names = 'caption', #call it the caption
                            #read everything as a character
@@ -241,18 +241,18 @@ Cross check for the figure above.
 Looking for `character(0)` outputs here to show that the two transcripts match exactly.
 
 ```{r}
-#| label: compareFigure3
+#| label: compareFigure2
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
 print('Differing lines in primary file:')
-sprintf('>%s', setdiff(read_lines('Smith2010_Figure3.csv'),
-        read_lines('temp/Smith2010_Figure3_SRS.csv')))
+sprintf('>%s', setdiff(read_lines('Smith2010_Figure2.csv'),
+        read_lines('temp/Smith2010_Figure2_SRS.csv')))
 
 print('Differing lines in secondary file:')
-sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure3_SRS.csv'),
-        read_lines('Smith2010_Figure3.csv')))
+sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure2_SRS.csv'),
+        read_lines('Smith2010_Figure2.csv')))
 
 
 ```
@@ -476,10 +476,10 @@ Looking for `character(0)` outputs here to show that the two transcripts match e
 
 print('Differing lines in primary file:')
 sprintf('>%s', setdiff(read_lines('Smith2010_Methods.md'),
-        read_lines('temp/Smith2010_Methods_AC.md')))
+        read_lines('temp/Smith2010_Methods_SRS.md')))
 
 print('Differing lines in secondary file:')
-sprintf('>%s', setdiff(read_lines('temp/Smith2010_Methods_AC.md'),
+sprintf('>%s', setdiff(read_lines('temp/Smith2010_Methods_SRS.md'),
         read_lines('Smith2010_Methods.md')))
 
 ```
