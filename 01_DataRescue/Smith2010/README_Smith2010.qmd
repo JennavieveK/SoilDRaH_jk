@@ -146,7 +146,7 @@ The purpose of this PROJECT is...
   - Location: Leaf litter, soil, and soil biota were collected in a forest of deciduous broadleaf P. tremuloides Michx. (quaking aspen) in the San Juan National forest (CO, USA, 40.58°N, 105.15°W; ∼2700 m elevation).
   - Duration: Initiated in Spring of 2007, lasting 192 days.
   - Mass loss: Identified in the Modeling and statistical analysis section of Methods.
-  - Solar exposure: Glasshouse treatments included control (No UV-B radiation, 0 kJ m−2 day−1), ambient (7.4±0.4 kJ m−2 day−1), and elevated (∼15% ozone reduction or 11.2±0.6 kJ m−2 day−1) UV-B exposure (Fig. 1b). Following the initial measurement, UV-B energy was measured daily at 0900 h with a UVX digital radiometer (UVP Inc., San Gabriel, CA, USA) which was calibrated using the Stellarnet spectrometer. 
+  - Solar exposure: Glasshouse treatments included control (No UV-B radiation, 0 kJ m−2 day−1), ambient (7.4±0.4 kJ m−2 day−1), and elevated (∼15% ozone reduction or 11.2±0.6 kJ m−2 day−1) UV-B exposure (Fig. 1b). Following the initial measurement, UV-B energy was measured daily at 0900 h with a UVX digital radiometer (UVP Inc., San Gabriel, CA, USA) which was calibrated using the Stellarnet spectrometer. 
   
 ## Files
 
@@ -259,34 +259,45 @@ sprintf('<%s',setdiff(read_lines('temp/Smith2010_Figure2_SRS.csv'),
 
 ## Figure 3
 
-Figure 3 was modified ....
+Figure 3 was modified by removing the additional tick marks between the y-values. In the original figure the key is in the top left corner of the figure, and the bar pairs are touching.
 
 ```{r}
 #| label: figure3Check
 
 
-plot.df <- read_csv(file = figure3.file, #read in the specific file
-         skip = 1, #skip the first line with the caption
-         #read everything as a character, don't worry about formatting yet
+plot.df <- read_csv(file = figure3.file,
+         skip = 1,
+         
          col_types = cols(.default = col_character())) |>
-  mutate(across(c(`Depth [cm]`, `Soil organic carbon density [g cm$-1$]`),
-                as.numeric)) #make things numbers
+  mutate(`Precipitation frequency` = factor(`Precipitation frequency`,
+                                            levels = c("Low", "Intermediate", "High")),
+         across(c(`Soil microbial biomass (μg C g$^{-1}$ dry soil)`,
+                  `SEM upper value`, `SEM lower value`),
+                as.numeric)) 
          
 ggplot(data = plot.df, 
-       mapping = aes(x = `Depth [cm]`, y = `Soil organic carbon density [g cm$-1$]`, color=Site)) +
-  geom_line() +
-  geom_point() +
-  #depth below surface is often plotted flipped and downward positive
-  scale_x_reverse() +
-  coord_flip() +
-  labs(caption = read_csv(file = table3.file, #read in that file again but...
-                           n_max = 1, #only read the first line
-                           col_names = 'caption', #call it the caption
-                           #read everything as a character
+       mapping = aes(x = `Precipitation frequency`, y = `Soil microbial biomass (μg C g$^{-1}$ dry soil)`, fill = `Soil type`)) +
+  geom_col(position = position_dodge(0.8), width = 0.7, colour = "black") +
+  geom_errorbar(aes(ymin = `SEM lower value`,
+                    ymax = `SEM upper value`),
+                position = position_dodge(0.8), width = 0.2) +
+  geom_text(aes(y = `SEM upper value` + 6, label = footnote),
+            position = position_dodge(0.8), size = 3) +
+  scale_fill_manual(values = c("white", "grey50")) +
+  scale_y_continuous(limits = c(0, 225), breaks = c(0, 75, 150, 225), expand = c(0,0)) +
+  labs(y = ("Soil microbial biomass (μg C g<sup>-1</sup> dry soil)"),
+       fill = NULL,
+       caption = read_csv(file = figure3.file,
+                           n_max = 1,
+                           col_names = 'caption',
                            col_types = cols(.default = col_character()),
-                           show_col_types = FALSE #do not return messages
-                           )$caption #and take it out of the table
-  )
+                           show_col_types = FALSE)$caption |>
+         stringr::str_wrap(width = 100)
+  ) +
+  theme_classic() +
+  theme(axis.title.y = ggtext::element_markdown()) +
+  theme(plot.caption = element_text(hjust = 0))
+
 ```
 
 Cross check for the figure above. 
